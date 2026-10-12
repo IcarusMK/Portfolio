@@ -1,0 +1,241 @@
+:root {
+  --bg1: #030b2a;
+  --bg2: #050b2f;
+  --accent: #2e66ff;
+  --accent2: #6f69ff;
+  --card: rgba(11, 20, 48, 0.55);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text: #f7f8ff;
+  --muted: #c2c8e2;
+  --radius: 20px;
+}
+
+.contact-section {
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-section h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.contact-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  border: 2px solid var(--card-border);
+  background: rgba(11, 20, 48, 0.3);
+  color: var(--muted);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(46, 102, 255, 0.3);
+}
+
+.tab-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.tab-content {
+  position: relative;
+  min-height: 300px;
+}
+
+.tab-pane {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.tab-pane.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, 
+    rgba(46, 102, 255, 0.08) 0%,
+    rgba(111, 105, 255, 0.08) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-large-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  stroke: currentColor;
+  color: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.contact-logo-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+  animation: pulse 2s ease-in-out infinite;
+  filter: brightness(0) saturate(100%) invert(63%) sepia(68%) saturate(382%) hue-rotate(89deg) brightness(102%) contrast(103%);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.contact-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.contact-label {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.contact-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 12px 24px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  color: var(--accent2);
+  border-bottom-color: var(--accent2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-tabs {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-large-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Estilos específicos para WhatsApp */
+#whatsapp .contact-large-icon {
+  color: #25d366;
+}
+
+#whatsapp .tab-btn.active {
+  background: linear-gradient(135deg, #25d366, #20ba5a);
+  border-color: #25d366;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+}
+
+/* Estilos específicos para Instagram */
+#instagram .contact-large-icon {
+  color: #e1306c;
+}
+
+#instagram .tab-btn.active {
+  background: linear-gradient(135deg, #e1306c, #405de6);
+  border-color: #e1306c;
+  box-shadow: 0 8px 32px rgba(225, 48, 108, 0.3);
+}

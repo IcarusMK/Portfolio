@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miguel Klein - Projetos</title>
+  <link rel="stylesheet" href="styleprojects.css" />
+</head>
+
+<body>
+  <main class="page">
+    <header class="topnav">
+      <a class="logo" href="#"><span>M</span>iguel.</a>
+      <nav class="menu">
+        <a href="index.html">home</a>
+        <a href="about.html">sobre</a>
+        <a href="projects.html">projetos</a>
+        <a href="contact.html">contatos</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Meus Projetos</h1>
+        <p class="lead">
+          Aqui, apresento parte dos meus projetos pessoais e acadêmicos, destacando minhas habilidades técnicas e minha paixão por 
+          desenvolvimento web e cybersecurity.
+        </p>
+      </div>
+    </section>
+
+    <div class="discover">Projetos</div>
+
+    <section class="projects-grid">
+      <article class="proj-card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="fotos/portscan.png" alt="Projeto 1" data-project-name="Portscan" data-project-type="GITHUB">
+            <img src="https://via.placeholder.com/300x200/2e66ff/ffffff?text=Portscan+2" alt="Projeto 2" data-project-name="p2" data-project-type="p2">
+            <img src="https://via.placeholder.com/300x200/6f69ff/ffffff?text=Portscan+3" alt="Projeto 3" data-project-name="p3" data-project-type="p3">
+          </div>
+          <button class="carousel-btn prev" data-carousel="0">&#10094;</button>
+          <button class="carousel-btn next" data-carousel="0">&#10095;</button>
+          <div class="carousel-dots">
+            <span class="dot active" data-carousel="0" data-index="0"></span>
+            <span class="dot" data-carousel="0" data-index="1"></span>
+            <span class="dot" data-carousel="0" data-index="2"></span>
+          </div>
+        </div>
+        <div class="proj-info">
+          <div class="proj-name">Portscan</div>
+          <div class="proj-type">GITHUB</div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div id="image-modal" class="image-modal">
+    <span class="modal-close">&times;</span>
+    <img id="modal-image" src="" alt="Imagem em tela cheia" class="modal-image">
+  </div>
+
+  <script src="carousel.js"></script>
+</body>
+</html>

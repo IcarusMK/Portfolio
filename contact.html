@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miguel Klein - Contato</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contactstyle.css" />
+</head>
+
+<body>
+  <main class="page">
+    <header class="topnav">
+      <a class="logo" href="#"><span>M</span>iguel.</a>
+      <nav class="menu">
+        <a href="index.html">home</a>
+        <a href="about.html">sobre</a>
+        <a href="projects.html">projetos</a>
+        <a href="contact.html">contatos</a>
+      </nav>
+    </header>
+
+    <section class="contact-section">
+      <h1>Entre em Contato</h1>
+      <p class="contact-intro">Escolha o meio de comunicação que preferir:</p>
+
+      <div class="contact-tabs">
+        <button class="tab-btn active" data-tab="email">
+          <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          Email
+        </button>
+        <button class="tab-btn" data-tab="whatsapp">
+          <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 0 0-4.7 1.98c-2.874 2.878-2.874 7.547 0 10.423 2.873 2.877 7.543 2.877 10.417 0 2.873-2.876 2.873-7.545 0-10.423a9.867 9.867 0 0 0-5.717-1.98zM12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z"/>
+          </svg>
+          WhatsApp
+        </button>
+        <button class="tab-btn" data-tab="instagram">
+          <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+          </svg>
+          Instagram
+        </button>
+      </div>
+
+      <div class="tab-content">
+        <div id="email" class="tab-pane active">
+          <div class="contact-card">
+            <svg class="contact-large-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <h2>Email</h2>
+            <p class="contact-label">Envie-me um email:</p>
+            <a href="mailto:miguelklein.mk@hotmail.com" class="contact-link">miguelklein.mk@hotmail.com</a>
+          </div>
+        </div>
+
+        <div id="whatsapp" class="tab-pane">
+          <div class="contact-card">
+            <img src="fotos/whatsapp.png" alt="WhatsApp" class="contact-logo-img">
+            <h2>WhatsApp</h2>
+            <p class="contact-label">Envie-me uma mensagem:</p>
+            <a href="https://wa.me/5522997837893" target="_blank" class="contact-link">(22) 99783-7893</a>
+          </div>
+        </div>
+
+        <div id="instagram" class="tab-pane">
+          <div class="contact-card">
+            <svg class="contact-large-icon" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+            </svg>
+            <h2>Instagram</h2>
+            <p class="contact-label">Siga-me no Instagram:</p>
+            <a href="https://www.instagram.com/yfz.miguelk/" target="_blank" class="contact-link">@yfz.miguelk</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabName = button.getAttribute('data-tab');
+        
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+        
+        button.classList.add('active');
+        document.getElementById(tabName).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
